@@ -1,14 +1,24 @@
-// Incorrect:
-
-// setTimeout(() => {
-//   console.log("This will run after 2 seconds");
-// }, 2000);
-
-// Correct:
-
-async function runTimer() {
-  console.log("Start");
-  await new Promise(resolve => setTimeout(resolve, 2000));
-  console.log("This will run after 2 seconds");
+function A() {
+  setTimeout(function() {
+    console.log("A1");
+  }, 5000);
+  console.log("A2");
 }
-runTimer();
+
+function B() {
+  setTimeout(function() {
+    console.log("B1");
+  }, 3000);
+  console.log("B2");
+}
+
+function C() {
+  setTimeout(function() {
+    console.log("C1");
+  }, 1000);
+  console.log("C2");
+}
+
+A();
+B();
+C();
