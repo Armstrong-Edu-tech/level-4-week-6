@@ -7,3 +7,4 @@ fs.unlink('unwanted.txt', function (err) {
   }
   console.log("File deleted successfully.");
 });
+
